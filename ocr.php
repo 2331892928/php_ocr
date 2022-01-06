@@ -20,7 +20,7 @@
 		$post_data = array(
 		  'type' => 'commontext',
 		  'image' => '',
-		  'image_url' => 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4089793816,637672192&fm=27&gp=0.jpg'
+		  'image_url' => $str
 		);
 	}
 	$ym = send_post("https://cloud.baidu.com/aidemo",$post_data);
