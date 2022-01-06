@@ -6,6 +6,8 @@
 <br>请求参数：</br>
 <br>str：可以链接图片，可以base64编码图片(完整)</br>
 <br>format：可选参数，默认json_txt，可选：json,txt。</br>
+# 注意事项
+如str传的是链接，如链接中有&符号，请替换为|||符号。否则读取不了链接内图片
 # 请求示例
 <br>https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4089793816,637672192&fm=27&gp=0.jpg</br>
 <br>json:</br>
