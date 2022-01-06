@@ -3,7 +3,6 @@
 	$_POST    && SafeFilter($_POST);
 	$_COOKIE  && SafeFilter($_COOKIE);
 	$str =  isset($_POST['str']) ? $_POST['str'] : json(201,"图片不存在");//base64与链接
-	$l =  isset($_POST['lg']) ? $_POST['lg'] : "";
 	$type = isset($_POST['format']) ? $_POST['format'] : "json_txt";//json为json包含位置 json_txt是{code:200,msg:""} txt是纯字
 	
 	$mode = true;
@@ -11,12 +10,14 @@
 	if(strpos($str, "https:") === 0) $mode = false;
 	$wb = "";
 	if($mode){//字节集
+		$str = str_replace(" ","+",$str);
 		$post_data = array(
 		  'type' => 'commontext',
 		  'image' => $str,
 		  'image_url' => ''
 		);
 	}else{//链接
+		$str = str_replace("|||","&",$str);
 		$post_data = array(
 		  'type' => 'commontext',
 		  'image' => '',
